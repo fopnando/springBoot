@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Formulário</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Formulário</title>
 </head>
 <body>
 <h1>Formulário</h1>
 
-<form method="post" action="metodos">
-
-   <button> Enviar</button>
-</form>
+<form action="#" th:action="@{/api/produtos}" th:object="${produto}" method="post">
+    	<p>Id: <input type="text" th:field="*{id}" /></p>
+        <p>Nome: <input type="text" th:field="*{nome}" /></p>
+        <p><input type="submit" value="Salvar" /> <input type="reset" value="Limpar" /></p>
+    </form>
 
 </body>
 </html>
