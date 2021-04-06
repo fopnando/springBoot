@@ -26,7 +26,13 @@ public class ProdutoController {
 		produtoRepository.save(produto);
 		return "redirect:/api/produtos/novo";
 	}
-	
+
+	@GetMapping("/formulario")
+	public String novoProduto() {
+		return "/formulario";
+
+	}
+
 	@GetMapping(Rota.LISTAR)
 	public ModelAndView listarTodos() {
 		ModelAndView mv = new ModelAndView("index");
