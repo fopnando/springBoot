@@ -35,6 +35,8 @@
 					<th scope="col"></th>
 					<th scope="col">Id</th>
 					<th scope="col">Nome Produto</th>
+					<th scope="col">Preço</th>
+					<th scope="col">Desconto</th>
 				</tr>
 			</thead>
 			<tbody th:each="produto : ${produtos}">
@@ -43,11 +45,13 @@
 						type="checkbox"></th>
 					<td><span th:text="${produto.id}"></span></td>
 					<td><span th:text="${produto.nome}"></span></td>
+					<td><span th:text="${produto.preco}"></span></td>
+					<td><span th:text="${produto.desconto}"></span></td>
 				</tr>
 			</tbody>
 		</table>
 		
-		<a th:href="@{/formulario}">
+		<a th:href="@{/api/produtos/novo}">
 			<button type="button" class="btn btn-outline-primary">
 				<b>Incluir</b>
 			</button>

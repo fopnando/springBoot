@@ -1,5 +1,7 @@
 package br.com.safeprovedor.springBoot.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,16 +24,11 @@ public class ProdutoController {
 	}
 	
 	@PostMapping(Rota.CRIAR)
-	public String novoProduto(Produto produto) {
+	public String novoProduto(@Valid Produto produto) {
 		produtoRepository.save(produto);
 		return "redirect:/api/produtos/novo";
 	}
 
-	@GetMapping("/formulario")
-	public String novoProduto() {
-		return "/formulario";
-
-	}
 
 	@GetMapping(Rota.LISTAR)
 	public ModelAndView listarTodos() {
